@@ -16,7 +16,16 @@
   <a href="https://www.instagram.com/just.call.me.koko"><img src="https://img.shields.io/badge/Follow%20Me-Instagram-orange" alt="Instagram"/></a>
   <br><br>
   <a href="https://www.tindie.com/products/justcallmekoko/esp32-marauder/"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" alt="I sell on Tindie" width="200" height="104"></a>
+  <br>
+  <a href="https://www.twitch.tv/willstunforfood"><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c540.png" alt="Twitch WillStunForFood" width="200"></a>
 </p>
+
+Catch my live stream on [Twitch](https://www.twitch.tv/willstunforfood) where I play games, have just chatting sessions to talk tech, and just generally be an ordinary person who can't figure out how to make proper life decisions.
+  
+  Stream Schedule:  
+    Mon: 1800 - 2000 EST  
+    Wed: 1800 - 2000 EST  
+    Sun: 1200 - 1400 EST 
 
 [![HitCount](http://hits.dwyl.io/justcallmekoko/badges.svg)](http://hits.dwyl.io/justcallmekoko/badges)
 [![Build Status](https://travis-ci.com/justcallmekoko/ESP32Marauder.svg?branch=master)](https://travis-ci.com/justcallmekoko/ESP32Marauder)
