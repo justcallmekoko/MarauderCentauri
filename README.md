@@ -27,7 +27,7 @@ Catch my live stream on [Twitch](https://www.twitch.tv/willstunforfood) where I 
     Wed: 1800 - 2000 EST  
     Sun: 1200 - 1400 EST 
     
-*The repository your mom warned you about*
+*The repository your mom warned you about.*
 
 [![HitCount](http://hits.dwyl.io/justcallmekoko/badges.svg)](http://hits.dwyl.io/justcallmekoko/badges)
 [![Build Status](https://travis-ci.com/justcallmekoko/ESP32Marauder.svg?branch=master)](https://travis-ci.com/justcallmekoko/ESP32Marauder)
