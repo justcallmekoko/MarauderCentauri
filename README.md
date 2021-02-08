@@ -30,7 +30,7 @@ Catch my live stream on [Twitch](https://www.twitch.tv/willstunforfood) where I 
 *The repository your mom warned you about.*
 
 [![HitCount](http://hits.dwyl.io/justcallmekoko/badges.svg)](http://hits.dwyl.io/justcallmekoko/badges)
-[![Build Status](https://travis-ci.com/justcallmekoko/MarauderCentauri.svg?branch=master)](https://travis-ci.com/justcallmekoko/MarauderCentauri)
+[![Build Status](https://travis-ci.com/justcallmekoko/MarauderCentauri.svg?branch=main)](https://travis-ci.com/justcallmekoko/MarauderCentauri)
 
 # Table Of Condensation
 - [About](#about)
