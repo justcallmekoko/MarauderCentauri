@@ -3,14 +3,14 @@
 <!---[![Build Status](https://travis-ci.com/justcallmekoko/ESP32Marauder.svg?branch=master)](https://travis-ci.com/justcallmekoko/ESP32Marauder)--->
 <!---Shields/Badges https://shields.io/--->
 
-# ESP32 Marauder v0.8.0
+# Marauder Centauri v0.1
 <p align="center"><img alt="Marauder logo" src="https://github.com/justcallmekoko/ESP32Marauder/blob/master/pictures/marauder3L.jpg?raw=true" width="300"></p>
 <p align="center">
   <b>A suite of WiFi/Bluetooth offensive and defensive tools for the ESP32</b>
   <br><br>
-  <a href="https://github.com/justcallmekoko/ESP32Marauder/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
+  <a href="https://github.com/justcallmekoko/MarauderCentauri/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
   <a href="https://gitter.im/justcallmekoko/ESP32Marauder"><img alt="Gitter" src="https://badges.gitter.im/justcallmekoko/ESP32Marauder.png"/></a>
-  <a href="https://github.com/justcallmekoko/ESP32Marauder/releases/latest"><img src="https://img.shields.io/github/downloads/justcallmekoko/ESP32Marauder/total" alt="Downloads"/></a>
+  <a href="https://github.com/justcallmekoko/MarauderCentauri/releases/latest"><img src="https://img.shields.io/github/downloads/justcallmekoko/MarauderCentauri/total" alt="Downloads"/></a>
   <br>
   <a href="https://twitter.com/intent/follow?screen_name=jcmkyoutube"><img src="https://img.shields.io/twitter/follow/jcmkyoutube?style=social&logo=twitter" alt="Twitter"></a>
   <a href="https://www.instagram.com/just.call.me.koko"><img src="https://img.shields.io/badge/Follow%20Me-Instagram-orange" alt="Instagram"/></a>
@@ -26,26 +26,22 @@
   - [YouTube](#youtube)
   - [Hackster Article](#hackster-article)
   - [Capabilities](#capabilities)
-- [Do It Yourself](#do-it-yourself)
-  - [Hardware](#hardware)
-    - [Connections](#connections)
-  - [Flashing Firmware](#flashing-firmware)
-    - [Using Arduino IDE](#using-arduino-ide)
-  - [Updating Firmware](#updating-firmware)
-    - [Web Update](#web-update)
-    - [SD Update](#sd-update)
-  - [Enclosure](#enclosure)
+- [Flashing Firmware](#flashing-firmware)
+  - [Using Arduino IDE](#using-arduino-ide)
+- [Updating Firmware](#updating-firmware)
+  - [Web Update](#web-update)
+  - [SD Update](#sd-update)
 - [Under Development](#under-development)
 - [Special Thanks](#special-thanks)
 - [For Sale Now](#for-sale-now)
 
 # About
 Sometimes you just gotta do what you gotta do. Am I right, ladies?
-The ESP32 Marauder is a suite of WiFi/Bluetooth offensive and defensive tools created for the ESP32 and was originally inspired by [Spacehuhn's](https://github.com/Spacehuhn) [esp8266_deauther](https://github.com/Spacehuhn/esp8366_deauther) project. The tool itself serves as a portable device used to test and analyze WiFi and Bluetooth devices. Use this tool and its firmware with caution as the use of some of its capabilities without explicit consent from the target owner is unlawful in most countries. For more information about this project and how it's assembled, follow the video link below. Track features and issues [here](https://github.com/justcallmekoko/ESP32Marauder/issues). Check out [#esp32marauder](https://www.instagram.com/explore/tags/esp32marauder/) on Instagram.  
+The ESP32 Marauder is a suite of WiFi/Bluetooth offensive and defensive tools created for the ESP32 and was originally inspired by [Spacehuhn's](https://github.com/Spacehuhn) [esp8266_deauther](https://github.com/Spacehuhn/esp8366_deauther) project. The tool itself serves as a portable device used to test and analyze WiFi and Bluetooth devices. Use this tool and its firmware with caution as the use of some of its capabilities without explicit consent from the target owner is unlawful in most countries. For more information about this project and how it's assembled, follow the video link below. Track features and issues [here](https://github.com/justcallmekoko/MarauderCentauri/issues). Check out [#esp32marauder](https://www.instagram.com/explore/tags/esp32marauder/) on Instagram.  
 **Note:** Because of espressif's ESP32-IDF, the ESP32 included with Marauder is incapable of transmitting deauthentication frames.
 
 ### YouTube
-<p align="left"><a href="https://www.youtube.com/watch?v=BGFO1wA29o8"><img alt="Marauder logo" src="https://github.com/justcallmekoko/ESP32Marauder/blob/master/pictures/esp32marauder_thumbnail.jpg" width="500"></a></p>
+<p align="left"><a href="https://www.youtube.com/watch?v=BGFO1wA29o8"><img alt="Marauder logo" src="https://github.com/justcallmekoko/MarauderCentauri/blob/master/pictures/esp32marauder_thumbnail.jpg" width="500"></a></p>
 
 ### Hackster Article
 You can check out the marauder article written [here](https://www.hackster.io/news/esp32-marauder-puts-a-bluetooth-wi-fi-pen-testing-toolkit-in-your-pocket-32d389f6e66f) as well as other interesting engineering projects.
@@ -74,47 +70,8 @@ You can check out the marauder article written [here](https://www.hackster.io/ne
 - Update Firmware: Update Marauder firmware over the air via web interface or with SD card
 - Save PCAP files to SD card
 
-# Do It Yourself
-<p align="center"><img alt="Marauder logo" src="https://github.com/justcallmekoko/ESP32Marauder/blob/master/pictures/diy.png?raw=true" width="800"></p>
-
-## Hardware
-This project requires the following hardware in order to work:
-- Any ESP32 Development Board
-- 2.8" TFT Touch Screen w/ ili9341
-- Jumper Wires
-- Breadboard
-
-### Connections
-Make the following connections between your 2.8" TFT Screen and your ESP32 board. You may need to refer to a pinout sheet specific to the ESP32 dev board you have chosen. For more infomation about this circuit, please refer to [this schematic](https://github.com/justcallmekoko/ESP32Marauder/blob/master/schematics/Schematic_ESP32-Marauder-2_ESP32-Marauder-2-Schematic_20191007113616_png.png)
-
-| SD Card | 2.8" TFT | ESP32  |
-| ------- | -------- | ------ |
-|         | VCC      | VCC    |
-|         | GND      | GND    |
-|         | CS       | GPIO17 |
-|         | RESET    | GPIO5  |
-|         | D/C      | GPIO16 |
-| SD_MOSI | MOSI     | GPIO23 |
-| SD_SCK  | SCK      | GPIO18 |
-|         | LED      | GPIO32 |
-| SD_MISO | MISO     | GPIO19 |
-|         | T_CLK    | GPIO18 |
-|         | T_CS     | GPIO21 |
-|         | T_DI     | GPIO23 |
-|         | T_DO     | GPIO19 |
-|         | T_IRQ    |        |
-| SD_CS   |          | GPIO12 |
-
-For the analog battery circuit, use a 4 to 1 voltage divider, and (optional) a mosfet.
-For the charge detection circuit, use a 1 to 2 voltage divider (the charge detection is optional and only changes the battery icon colour while charging)
-| BATTERY | ESP32  |
-| ------- | ------ |
-|  BAT +  | GPIO34 |
-|  MOSFET | GPIO13 |
-| CHARGE +| GPIO27 |
-
-## Flashing Firmware
-### Using Arduino IDE
+# Flashing Firmware
+## Using Arduino IDE
 1. Install the [Arduino IDE](https://www.arduino.cc/en/main/software)
 2. In the Arduino IDE, go to `File`>`Preferences`
 3. Add the following URL to `Additional Boards Manager URLs:`
@@ -127,9 +84,9 @@ For the charge detection circuit, use a 1 to 2 voltage divider (the charge detec
 6. Install my fork of Bodmer's [TFT_eSPI](https://github.com/justcallmekoko/TFT_eSPI) library in your Arduino IDE
     - Download the TFT_eSPI repo
     - In the Arduino IDE, go to `Sketch`>`Include Library`>`Add .ZIP Library...` and add the TFT-eSPI-master.zip you just downloaded
-    - Make the following modifications shown in [this issue](https://github.com/justcallmekoko/ESP32Marauder/issues/2#issuecomment-555695918) to the TFT_eSPI library you just installed
+    - Make the following modifications shown in [this issue](https://github.com/justcallmekoko/MarauderCentauri/issues/2#issuecomment-555695918) to the TFT_eSPI library you just installed
 7. Follow [these instructions](https://github.com/me-no-dev/arduino-esp32fs-plugin) for installing ESP32 Spiffs Tool
-8. Install the [CH340 Drivers](https://github.com/justcallmekoko/ESP32Marauder/blob/master/Drivers/CH34x_Install_Windows_v3_4.EXE)
+8. Install the [CH340 Drivers](https://github.com/justcallmekoko/MarauderCentauri/blob/master/Drivers/CH34x_Install_Windows_v3_4.EXE)
 9. Download or clone this repository
 10. Open `esp32_marauder.ino`
 10.5. If you're using the analog battery measuring circuit, go to the MenuFunctions.h and change "#define BATTERY_ANALOG_ON" to 1
@@ -144,12 +101,12 @@ For the charge detection circuit, use a 1 to 2 voltage divider (the charge detec
   <img alt="Marauder logo" src="https://github.com/justcallmekoko/ESP32Marauder/blob/master/pictures/odroid_marauder.jpg?raw=true" height="300">
 </p>
 
-## Updating Firmware
+# Updating Firmware
 There are multiple options available to update the Marauder firmware. If you have already built the project from this repo, you can just pull the latest commit and flash the firmware using the Arduino IDE (see [here](#using-arduino-ide)).  
 If you own an ESP32 Marauder (v0.4.0 or later) and have not build the project, you can follow [these instructions](#web-update) for installing the latest update over the air via Marauder's web interface or [these instructions](#sd-update) for installing the latest update using an SD Card.  
 
-### Web Update
-1. Download the [latest release](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) of the Marauder firmware
+## Web Update
+1. Download the [latest release](https://github.com/justcallmekoko/MarauderCentauri/releases/latest) of the Marauder firmware
 2. With Marauder powered on, navigate to `Device`>`Update Firmware`>`Web Update`
     - Marauder will display details on screen about the status of the update
 3. Connect to the MarauderOTA WiFi network from your computer
@@ -162,32 +119,15 @@ If you own an ESP32 Marauder (v0.4.0 or later) and have not build the project, y
 7. Click `Update`
     - Marauder will automatically reboot once the update has been applied
     
-### SD Update
+## SD Update
 *Using a Samsung MicroSD card will cause Marauder not to boot*
-1. Download the [latest release](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) of the Marauder firmware
+1. Download the [latest release](https://github.com/justcallmekoko/MarauderCentauri/releases/latest) of the Marauder firmware
 2. Copy the bin file you downloaded to the root of an SD card
 3. Rename the bin file on the SD card to `update.bin`
 4. With Marauder powered off, insert the SD card into Marauder
 5. Power Marauder on and navigate to `Device`>`Update Firmware`>`SD Update`
 6. Click `Yes` to confirm the update
     - Marauder will automatically reboot once the update has been applied
-    
-## Enclosure
-The ESP32 Marauder sold on Tindie comes with its own 3D printed enclosure. If you want to replace the enclosure that came with yours or you want to try to fit your own hardware in an enclosure and have access to a 3D printer, you can download the STL files [here](https://github.com/justcallmekoko/ESP32Marauder/tree/master/3Dfiles) or from [Thingiverse](https://www.thingiverse.com/thing:4146626).
-
-Instructions from Thingiverse
-Components of the project:
-  - ESP32 Marauder
-  - 4 M2.5x10 Hex screws
-  - Enclosure face plate
-  - Enclosure body
-
-How to do the thing:
-1. Print both the face plate and the body
-2. Mount the face plate onto the screen of the Marauder by putting the pegs through the holes on the screen PCB
-3. Lower the Marauder into the body of the enclosure and ensure the battery sits within the trench in the center of the body
-4. Fasten the face plate to the body using 4 M2.5x10 hex screws.
-    - The top of the screws should be flush with the surface of the face plate
     
 # Icons
 I put these here just because  
