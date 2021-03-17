@@ -9,6 +9,7 @@
 #include "SDInterface.h"
 #include "Web.h"
 #include "keyboard_interface.h"
+#include "esp_interface.h"
 
 
 extern Display display_obj;
@@ -17,6 +18,7 @@ extern Web web_obj;
 extern SDInterface sd_obj;
 extern BatteryInterface battery_obj;
 extern KeyboardInterface keyboard_obj;
+extern EspInterface esp_obj;
 
 // Keypad start position, key sizes and spacing
 #define KEY_X 120 // Centre of key
@@ -129,6 +131,7 @@ class MenuFunctions
     Menu whichUpdateMenu;
     Menu failedUpdateMenu;
     Menu confirmMenu;
+    Menu espUpdateMenu;
     Menu updateMenu;
     Menu infoMenu;
 

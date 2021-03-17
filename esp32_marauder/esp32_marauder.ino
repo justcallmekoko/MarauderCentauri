@@ -27,6 +27,7 @@ https://www.online-utility.org/image/convert/to/XBM
 #include "TemperatureInterface.h"
 #include "LedInterface.h"
 #include "keyboard_interface.h"
+#include "esp_interface.h"
 //#include "icons.h"
 
 /*
@@ -50,6 +51,7 @@ BatteryInterface battery_obj;
 TemperatureInterface temp_obj;
 LedInterface led_obj;
 KeyboardInterface keyboard_obj;
+EspInterface esp_obj;
 
 
 //Adafruit_NeoPixel strip = Adafruit_NeoPixel(Pixels, PIN, NEO_GRB + NEO_KHZ800);
@@ -132,6 +134,8 @@ void setup()
     //display_obj.tft.println(F("Failed to Initialize SD Card"));
     //display_obj.tft.setTextColor(TFT_CYAN, TFT_BLACK);
   }*/
+
+  esp_obj.begin();
     
   display_obj.RunSetup();
   display_obj.tft.setTextColor(TFT_CYAN, TFT_BLACK);
@@ -249,7 +253,8 @@ void loop()
   //    (wifi_scan_obj.currentScanMode != OTA_UPDATE))
   if (!display_obj.draw_tft)
   {
-    display_obj.main(wifi_scan_obj.currentScanMode); 
+    display_obj.main(wifi_scan_obj.currentScanMode);
+    esp_obj.main(currentTime); 
     wifi_scan_obj.main(currentTime);
     //sd_obj.main();
     battery_obj.main(currentTime);
