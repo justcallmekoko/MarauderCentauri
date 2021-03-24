@@ -10,7 +10,7 @@ void EspInterface::begin() {
 
   digitalWrite(ESP_ZERO, HIGH);
 
-  MySerial.begin(115200, SERIAL_8N1, 16, 17);
+  MySerial.begin(BAUD, SERIAL_8N1, 16, 17);
 
   this->bootRunMode();
 }
@@ -37,9 +37,13 @@ void EspInterface::bootProgramMode() {
   delay(100);
   digitalWrite(ESP_ZERO, HIGH);
   Serial.println("[!] Complete");
+  Serial.end();
+  Serial.begin(BAUD);
 }
 
 void EspInterface::bootRunMode() {
+  Serial.end();
+  Serial.begin(115200);
   Serial.println("[!] Setting ESP12 in run mode...");
   digitalWrite(ESP_ZERO, HIGH);
   delay(100);

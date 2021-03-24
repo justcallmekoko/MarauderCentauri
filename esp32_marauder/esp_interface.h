@@ -6,6 +6,7 @@
 
 #define ESP_RST  14
 #define ESP_ZERO 13
+#define BAUD     57600
 
 extern Display display_obj;
 

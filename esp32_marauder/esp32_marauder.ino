@@ -278,6 +278,7 @@ void loop()
     display_obj.main(wifi_scan_obj.currentScanMode);
     menu_function_obj.main(currentTime);
     esp_obj.program();
+    delay(1);
   }
   //else
   //{
