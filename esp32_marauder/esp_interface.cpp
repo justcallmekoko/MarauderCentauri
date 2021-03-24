@@ -1,5 +1,7 @@
 #include "esp_interface.h"
 
+HardwareSerial MySerial(1);
+
 void EspInterface::begin() {
   pinMode(ESP_RST, OUTPUT);
   pinMode(ESP_ZERO, OUTPUT);
@@ -8,9 +10,21 @@ void EspInterface::begin() {
 
   digitalWrite(ESP_ZERO, HIGH);
 
-  Serial2.begin(115200);
+  MySerial.begin(115200, SERIAL_8N1, 16, 17);
 
   this->bootRunMode();
+}
+
+void EspInterface::RunUpdate() {
+  this->bootProgramMode();
+  
+  display_obj.tft.setTextWrap(true);
+  display_obj.tft.setFreeFont(NULL);
+  display_obj.tft.setCursor(0, 100);
+  display_obj.tft.setTextSize(1);
+  display_obj.tft.setTextColor(TFT_GREEN);
+
+  display_obj.tft.println("Waiting for serial data...");
 }
 
 void EspInterface::bootProgramMode() {
@@ -37,12 +51,24 @@ void EspInterface::bootRunMode() {
   Serial.println("[!] Complete");
 }
 
-void EspInterface::main(uint32_t current_time) {
-  if (Serial2.available()) {
-    Serial.write((uint8_t)Serial2.read());
+void EspInterface::program() {
+  if (MySerial.available()) {
+    Serial.write((uint8_t)MySerial.read());
   }
 
   if (Serial.available()) {
-    Serial2.write((uint8_t)Serial.read());
+    while (Serial.available()) {
+      MySerial.write((uint8_t)Serial.read());
+    }
+  }
+}
+
+void EspInterface::main(uint32_t current_time) {
+  if (MySerial.available()) {
+    Serial.write((uint8_t)MySerial.read());
+  }
+
+  if (Serial.available()) {
+    MySerial.write((uint8_t)Serial.read());
   }
 }

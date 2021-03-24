@@ -251,7 +251,7 @@ void loop()
   // Update all of our objects
   //if ((!display_obj.draw_tft) &&
   //    (wifi_scan_obj.currentScanMode != OTA_UPDATE))
-  if (!display_obj.draw_tft)
+  if ((!display_obj.draw_tft) && (wifi_scan_obj.currentScanMode != ESP_UPDATE))
   {
     display_obj.main(wifi_scan_obj.currentScanMode);
     esp_obj.main(currentTime); 
@@ -259,6 +259,7 @@ void loop()
     //sd_obj.main();
     battery_obj.main(currentTime);
     temp_obj.main(currentTime);
+    esp_obj.main(currentTime);
     //led_obj.main(currentTime);
     //if ((wifi_scan_obj.currentScanMode != WIFI_ATTACK_BEACON_SPAM))
     if ((wifi_scan_obj.currentScanMode != WIFI_PACKET_MONITOR) &&
@@ -272,6 +273,11 @@ void loop()
            (wifi_scan_obj.currentScanMode != OTA_UPDATE))
   {
     display_obj.drawStylus();
+  }
+  else if (wifi_scan_obj.currentScanMode == ESP_UPDATE) {
+    display_obj.main(wifi_scan_obj.currentScanMode);
+    menu_function_obj.main(currentTime);
+    esp_obj.program();
   }
   //else
   //{

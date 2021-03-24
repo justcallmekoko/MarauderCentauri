@@ -303,6 +303,7 @@ void MenuFunctions::main(uint32_t currentTime)
   // We are at menu
   if ((wifi_scan_obj.currentScanMode == WIFI_SCAN_OFF) ||
       (wifi_scan_obj.currentScanMode == OTA_UPDATE) ||
+      (wifi_scan_obj.currentScanMode == ESP_UPDATE) ||
       (wifi_scan_obj.currentScanMode == SHOW_INFO)) {
     if (wifi_scan_obj.orient_display) {
       this->orientDisplay();
@@ -361,6 +362,7 @@ void MenuFunctions::main(uint32_t currentTime)
   if ((wifi_scan_obj.currentScanMode != WIFI_SCAN_OFF) &&
       (pressed) &&
       (wifi_scan_obj.currentScanMode != OTA_UPDATE) &&
+      (wifi_scan_obj.currentScanMode != ESP_UPDATE) &&
       (wifi_scan_obj.currentScanMode != SHOW_INFO))
   {
     // Stop the current scan
@@ -1060,13 +1062,15 @@ void MenuFunctions::RunSetup()
     changeMenu(&confirmMenu);
   });
   addNodes(&whichUpdateMenu, "ESP8266 Update", TFT_MAGENTA, NULL, SD_UPDATE, [this]() {
-    esp_obj.bootProgramMode();
+    wifi_scan_obj.currentScanMode = ESP_UPDATE;
     changeMenu(&espUpdateMenu);
+    esp_obj.RunUpdate();
   });
 
   // ESP Update Menu
   espUpdateMenu.parentMenu = &whichUpdateMenu;
   addNodes(&espUpdateMenu, "Back", TFT_LIGHTGREY, NULL, 0, [this]() {
+    wifi_scan_obj.currentScanMode = WIFI_SCAN_OFF;
     esp_obj.bootRunMode();
     changeMenu(espUpdateMenu.parentMenu);
   });
