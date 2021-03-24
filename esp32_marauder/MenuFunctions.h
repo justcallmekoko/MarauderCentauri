@@ -74,6 +74,7 @@ extern EspInterface esp_obj;
 #define CLEAR_ICO 29
 #define KEYBOARD_ICO 30
 #define JOIN_WIFI 31
+#define ESP_UPDATE_ICO 32
 
 PROGMEM void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p);
 PROGMEM bool my_touchpad_read(lv_indev_drv_t * indev_driver, lv_indev_data_t * data);

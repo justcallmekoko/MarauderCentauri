@@ -25,6 +25,8 @@ void EspInterface::RunUpdate() {
   display_obj.tft.setTextColor(TFT_GREEN);
 
   display_obj.tft.println("Waiting for serial data...");
+
+  display_obj.tft.setTextColor(TFT_WHITE);
 }
 
 void EspInterface::bootProgramMode() {
@@ -61,6 +63,7 @@ void EspInterface::program() {
   }
 
   if (Serial.available()) {
+    display_obj.tft.print(".");
     while (Serial.available()) {
       MySerial.write((uint8_t)Serial.read());
     }
